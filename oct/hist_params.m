@@ -11,7 +11,11 @@
 %
 function hist_params ()
     posteriorFile = 'results/posterior.nc';
-    ps = [20000:100000];
+
+    % work out appropriate sample range
+    nc = netcdf (posteriorFile, 'r');
+    P = length (nc('np'));
+    ps = [5000:P];
 
     names = {
         'F';
