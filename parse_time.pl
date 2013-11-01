@@ -21,7 +21,7 @@ while ($line = <>) {
     } elsif ($line =~ /^SMC\^2/) {
 	push(@smc2_results, []);
 	$results = $smc2_results[$#smc2_results];
-    } elsif ($line =~ /^(\d+): (\d+)$/) {
+    } elsif ($line =~ /^(\d+): total (\d+) us$/) {
 	$config = $1;
 	$time = $2/1e6;
 	$results->[$config] = $time;

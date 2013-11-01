@@ -11,6 +11,7 @@
 %
 function plot_and_print ()
     figDir = 'figs';
+    mkdir(figDir);
 
     % state estimates
     set (figure(1), 'papersize', [9 8]);
@@ -28,9 +29,9 @@ function plot_and_print ()
     hist_params;
     saveas (figure(1), sprintf('%s/param.svg', figDir));
 
-    plot_times;
-    saveas (figure(1), sprintf('%s/time.svg', figDir));
+    %plot_times;
+    %saveas (figure(1), sprintf('%s/time.svg', figDir));
 
-    plot_bifurc;
-    saveas (figure(1), sprintf('%s/bifurc.svg', figDir));
+    %plot_bifurc;
+    %saveas (figure(1), sprintf('%s/bifurc.svg', figDir));
 end
