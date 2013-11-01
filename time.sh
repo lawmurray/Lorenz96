@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # configurations
-CONFIG_COMMON="--enable-mkl --enable-assert --enable-single --with-timing --without-output"
+CONFIG_COMMON="--enable-assert --enable-single --enable-timing --without-output"
 CONFIG1="--nthreads 1"
 CONFIG2="--nthreads 4"
 CONFIG3="--nthreads 1 --enable-sse"
