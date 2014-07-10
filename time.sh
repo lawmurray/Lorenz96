@@ -13,18 +13,18 @@ CONFIG8="--nthreads 4 --enable-cuda --enable-gpu-cache --enable-mpi --mpi-nperno
 
 echo "Particle filter"
 echo "---------------"
-#echo -n "1: "; eval "libbi filter @filter.conf $CONFIG_COMMON $CONFIG1"
-#echo -n "2: "; eval "libbi filter @filter.conf $CONFIG_COMMON $CONFIG2"
-#echo -n "3: "; eval "libbi filter @filter.conf $CONFIG_COMMON $CONFIG3"
-#echo -n "4: "; eval "libbi filter @filter.conf $CONFIG_COMMON $CONFIG4"
-#echo -n "5: "; eval "libbi filter @filter.conf $CONFIG_COMMON $CONFIG5"
-#echo -n "6: "; eval "libbi filter @filter.conf $CONFIG_COMMON $CONFIG6"
+echo -n "1: "; eval "libbi filter @filter.conf $CONFIG_COMMON $CONFIG1"
+echo -n "2: "; eval "libbi filter @filter.conf $CONFIG_COMMON $CONFIG2"
+echo -n "3: "; eval "libbi filter @filter.conf $CONFIG_COMMON $CONFIG3"
+echo -n "4: "; eval "libbi filter @filter.conf $CONFIG_COMMON $CONFIG4"
+echo -n "5: "; eval "libbi filter @filter.conf $CONFIG_COMMON $CONFIG5"
+echo -n "6: "; eval "libbi filter @filter.conf $CONFIG_COMMON $CONFIG6"
 echo
 
 # PMCMC timing
 echo "Particle marginal Metropolis-Hastings"
 echo "-------------------------------------"
-echo -n "1: "; echo "libbi sample @posterior.conf --nsamples 500 $CONFIG_COMMON $CONFIG1 2> /dev/null"
+echo -n "1: "; eval "libbi sample @posterior.conf --nsamples 500 $CONFIG_COMMON $CONFIG1 2> /dev/null"
 echo -n "2: "; eval "libbi sample @posterior.conf --nsamples 500 $CONFIG_COMMON $CONFIG2 2> /dev/null"
 echo -n "3: "; eval "libbi sample @posterior.conf --nsamples 500 $CONFIG_COMMON $CONFIG3 2> /dev/null"
 echo -n "4: "; eval "libbi sample @posterior.conf --nsamples 500 $CONFIG_COMMON $CONFIG4 2> /dev/null"
