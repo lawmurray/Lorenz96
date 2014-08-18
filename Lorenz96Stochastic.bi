@@ -13,7 +13,7 @@ model Lorenz96Stochastic {
 
   sub parameter {
     F ~ uniform(0.0, 12.0)
-    sigma2 ~ inverse_gamma(2.0, 0.9)
+    sigma2 ~ inverse_gamma(2.0, 0.5)
   }
 
   sub initial {
