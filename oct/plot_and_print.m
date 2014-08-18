@@ -32,6 +32,6 @@ function plot_and_print ()
     plot_times;
     saveas (figure(1), sprintf('%s/time.pdf', figDir));
 
-    %plot_bifurc;
-    %saveas (figure(1), sprintf('%s/bifurc.pdf', figDir));
+    plot_bifurc;
+    saveas (figure(1), sprintf('%s/bifurc.pdf', figDir));
 end

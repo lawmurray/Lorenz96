@@ -1,5 +1,5 @@
 /**
- * Lorenz '96 model specification.
+ * Lorenz '96 deterministic model for bifurcation plots.
  */
 model Lorenz96Deterministic {
   dim n(size = 8, boundary = 'cyclic')
@@ -8,7 +8,6 @@ model Lorenz96Deterministic {
 
   param F          // forcing
   state x[n]       // state variables
-  obs y[n]         // observations
 
   sub parameter {
     F ~ uniform(0.0, 12.0)
@@ -22,9 +21,5 @@ model Lorenz96Deterministic {
     ode(h = h, alg = 'RK4') {
       dx[n]/dt = x[n-1]*(x[n+1] - x[n-2]) - x[n] + F
     }
-  }
-
-  sub observation {
-    y[n] ~ normal(x[n], 0.5)
   }
 }

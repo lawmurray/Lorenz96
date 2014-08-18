@@ -36,23 +36,10 @@ function bi_image_bifurc (file, param, param_coord, state, state_coord, ps, ts)
         error ('ts must be a vector');
     end
     
-    % input file
-    nc = netcdf(file, 'r');
-
-    % defaults
-    P = length (nc('np'));
-    if isempty (ps)
-        ps = [1:P];
-    end
-    T = length (nc('nr'));
-    if isempty (ts)
-        ts = [1:T];
-    end
-
     % data
-    x = bi_read_var (nc, param, param_coord, ps);
-    y = bi_read_var (nc, state, state_coord, ps, ts);
-
+    x = bi_read_var (file, param, param_coord, ps, ts);
+    y = bi_read_var (file, state, state_coord, ps, ts);
+    
     % data extents
     xmin = 0; %min(x);
     xmax = 12; %max(x);
@@ -64,12 +51,12 @@ function bi_image_bifurc (file, param, param_coord, state, state_coord, ps, ts)
     % bin
     [n1,ii] = histc(x, xs);
     n1 = n1(1:end-1); % chop off last bin
-    n2 = histc(y, ys, 1);
+    n2 = histc(y, ys, 2);
     for i = 2:8
-        y = bi_read_var (nc, state, i, ps, ts);
-	n2 = n2 + histc(y, ys, 1);
+        y = bi_read_var (file, state, i, ps, ts);
+	n2 = n2 + histc(y, ys, 2);
     end
-    n3 = accumdim (ii, n2, 2);
+    n3 = accumdim (ii, n2, 1)';
     n3 = n3 ./ repmat(n1', rows (n3), 1);
     for i = 1:columns (n3)
         mn = min (n3(:,i));

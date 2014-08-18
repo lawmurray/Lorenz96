@@ -17,11 +17,7 @@ function plot_states (is)
     posteriorFile = 'results/posterior.nc';
     predictionFile = 'results/prediction.nc';
     obsFile = 'data/obs_sparse.nc';
-    
-    % work out appropriate sample range
-    nc = netcdf (priorFile, 'r');
-    P = length (nc('np'));
-    ps = [5000:P];
+    ps = [5000:100000];
 
     for i = 1:length (is)
         subplot (length (is)/2, 2, i);
