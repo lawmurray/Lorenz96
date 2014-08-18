@@ -14,7 +14,7 @@ model Lorenz96 {
 
   sub parameter {
     F ~ uniform(8.0, 12.0)
-    sigma2 ~ inverse_gamma(2.0, 0.25)
+    sigma2 ~ inverse_gamma(2.0, 0.9)
   }
 
   sub initial {

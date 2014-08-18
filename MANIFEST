@@ -14,7 +14,7 @@ Lorenz96Deterministic.bi
 config.conf
 filter.conf
 posterior.conf
-posterior_smc2.conf
+posterior_sir.conf
 prediction.conf
 prior.conf
 data/init.nc
