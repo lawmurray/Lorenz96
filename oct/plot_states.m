@@ -49,7 +49,9 @@ function plot_states (is)
 	    set(gca, 'yticklabel', {});
 	end
 	if i == 2
-	   legend ("prior", "", "posterior", "", "prediction", "", "observed");
+	   legend ('prior', '', 'posterior', '', 'prediction', '', ...
+                   'observed');
+           legend('boxoff');
         end
     end
 end

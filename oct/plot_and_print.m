@@ -16,22 +16,22 @@ function plot_and_print ()
     % state estimates
     set (figure(1), 'papersize', [9 8]);
     set (figure(1), 'paperposition', [0 0 9 8]);
-    orient ('portrait');
+    orient ('tall');
     plot_states(1:4);
-    saveas (figure(1), sprintf('%s/state1.pdf', figDir));
+    saveas (figure(1), sprintf('%s/state1.svg', figDir));
 
     plot_states(5:8);
-    saveas (figure(1), sprintf('%s/state2.pdf', figDir));
+    saveas (figure(1), sprintf('%s/state2.svg', figDir));
 
-    set (figure(1), 'papersize', [3.5 8]);
-    set (figure(1), 'paperposition', [0 0 3.5 8]);
+    set (figure(1), 'papersize', [5 8]);
+    set (figure(1), 'paperposition', [0 0 5 8]);
     orient ('landscape');
     hist_params;
-    saveas (figure(1), sprintf('%s/param.pdf', figDir));
+    saveas (figure(1), sprintf('%s/param.svg', figDir));
 
-    plot_times;
-    saveas (figure(1), sprintf('%s/time.pdf', figDir));
+    %plot_times;
+    %saveas (figure(1), sprintf('%s/time.svg', figDir));
 
-    plot_bifurc;
-    saveas (figure(1), sprintf('%s/bifurc.pdf', figDir));
+    %plot_bifurc;
+    %saveas (figure(1), sprintf('%s/bifurc.pdf', figDir));
 end

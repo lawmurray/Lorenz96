@@ -28,8 +28,8 @@ function plot_times ()
 	times = dlmread (file);
         x = 1:columns (times);
     	y = quantile (times, 0.5);
-    	ly = quantile (times, 0.025);
-    	uy = quantile (times, 0.975);
+    	ly = quantile (times, 0.25);
+    	uy = quantile (times, 0.75);
 
     	h = bar (y);
     	set (h, 'facecolor', [.7 .7 .7]);
